@@ -1,14 +1,14 @@
 const axios = require('axios');
 
 module.exports.config = {
-  name: 'ai',
+  name: 'llama',
   version: '1.0.0',
   role: 0,
   hasPrefix: false,
-  aliases: ['gpt', 'openai'],
-  description: "An AI command powered by GPT-3.5",
-  usage: "ai [prompt]",
-  credits: 'Joshua Apostol',
+  aliases: ['llama-vision'],
+  description: "A command powered by Llama 3.2 Vision",
+  usage: "Llama [query]",
+  credits: 'Developer',
   cooldown: 3,
 };
 
@@ -17,7 +17,7 @@ module.exports.run = async function({ api, event, args }) {
 
   if (!input) {
     api.sendMessage(
-      "[ AI ]\n\nPlease provide a query after 'ai'. Example: 'ai What is AI?'",
+      "[ Llama ]\n\nPlease provide a query after 'llama'. Example: 'llama Describe this image.'",
       event.threadID,
       event.messageID
     );
@@ -25,24 +25,24 @@ module.exports.run = async function({ api, event, args }) {
   }
 
   api.sendMessage(
-    "[ AI ]\n\nPlease wait...",
+    "[ Llama ]\n\nPlease wait...",
     event.threadID,
     (err, info) => {
       if (err) return;
 
       axios
-        .get(`https://nash-api.onrender.com/api/gpt3?query=${encodeURIComponent(input)}`)
+        .get(`https://nash-api.onrender.com/api/llama-3.2-11b-vision-preview?query=${encodeURIComponent(input)}`)
         .then(({ data }) => {
           const response = data.response;
 
           api.editMessage(
-            response,
+             response,
             info.messageID
           );
         })
         .catch(() => {
           api.editMessage(
-            "[ AI ]\n\nAn error occurred while processing your request.",
+            "[ Llama ]\n\nAn error occurred while processing your request.",
             info.messageID
           );
         });
