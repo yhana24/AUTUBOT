@@ -20,11 +20,11 @@
     "mime-types": "^2.1.35",
     "moment-timezone": "^0.5.46",
     "node-cron": "^3.0.3",
+    "npmlog": "^7.0.1",
     "pidusage": "^3.0.2",
     "request": "^2.88.2",
     "simple-youtube-api": "^5.2.1",
     "ytdl-core": "^4.11.5"
   },
-  "devDependencies": {},
   "description": ""
 }
