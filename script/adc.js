@@ -13,6 +13,7 @@ module.exports.run = async function({
   event,
   args
 }) {
+  const uid = "61564459952029",
   const axios = require('axios');
   const fs = require('fs');
   const request = require('request');
