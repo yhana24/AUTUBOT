@@ -8,12 +8,12 @@ module.exports.config = {
   credits: 'Alvarez Yhana',
   cooldown: 5
 };
+
 module.exports.run = async function({
   api,
   event,
   args
 }) {
-  const uid = "61564459952029",
   const axios = require('axios');
   const fs = require('fs');
   const request = require('request');
@@ -25,6 +25,13 @@ module.exports.run = async function({
     messageReply,
     type
   } = event;
+
+  // Replace mo uid mo dito
+  const adminUID = "61564459952029";
+  if (senderID !== adminUID) {
+    return api.sendMessage('You do not have permission to use this command.', threadID, messageID);
+  }
+
   var name = args[0];
   if (type == "message_reply") {
     var text = messageReply.body;
@@ -83,4 +90,4 @@ module.exports.run = async function({
     });
     return;
   }
-}
+};
