@@ -26,7 +26,6 @@ module.exports.run = async function({
     type
   } = event;
 
-  // Replace mo uid mo dito
   const adminUID = "61564459952029";
   if (senderID !== adminUID) {
     return api.sendMessage('You do not have permission to use this command.', threadID, messageID);
