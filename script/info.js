@@ -7,7 +7,7 @@ module.exports.config = {
 		version: "1.0.1",
 		aliases: ["info", "Info", "in", "fo"],
 		role: 0,
-		description: "Yhana Alvarez.",
+		description: "Yhana alvarez.",
 		cooldown: 5,
 		hasPrefix: false,
 };
