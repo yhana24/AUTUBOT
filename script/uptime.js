@@ -2,7 +2,7 @@ const os = require('os');
 const pidusage = require('pidusage');
 
 module.exports.config = {
-		name: "uptime",
+		name: "Monitor",
 		version: "1.0.2",
 		role: 0,
 		description: "uptime",
