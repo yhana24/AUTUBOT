@@ -27,7 +27,7 @@ module.exports.run = async function({
             let page = 1;
             let start = (page - 1) * pages;
             let end = start + pages;
-            let helpMessage = `🔴🟢🟡\n\n====『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧: 』====\n\n`;
+            let helpMessage = `🌟🌟🌟\n\n====『 AUTOBOT COMMANDS LIST: 』====\n\n`;
             for (let i = start; i < Math.min(end, commands.length); i++) {
                 helpMessage += `  ╭─╮\n  | 『 ${i + 1}.』  ${prefix}${commands[i]}\n  ╰─────────────ꔪ\n`;
             }
@@ -43,7 +43,7 @@ module.exports.run = async function({
                 let page = 2;
                 let start = (page - 1) * pages;
                 let end = start + pages;
-                let helpMessage = `🔴🟢🟡\n\n====『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧: 』====\n\n`;
+                let helpMessage = `🌟🌟🌟\n\n====『 AUTOBOT COMMANDS LIST: 』====\n\n`;
                 for (let i = start; i < Math.min(end, commands.length); i++) {
                     helpMessage += `  ╭─╮\n  | 『 ${i + 1}.』  ${prefix}${commands[i]}\n  ╰─────────────ꔪ\n`;
                 }
@@ -67,7 +67,7 @@ module.exports.handleEvent = async function({
 }) {
     const { threadID, messageID, body } = event;
     const message = prefix 
-        ? `Yo, my prefix is [ 𓆩 '${prefix}' 𓆪 ]\n\n𝗦𝗢𝗠𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗧𝗛𝗔𝗧 𝗠𝗔𝗬 𝗛𝗘𝗟𝗽 𝗬𝗢𝗨:\n➥ '${prefix}help [command]' -> information and usage of command\n\nHave fun using it, enjoy! ❤` 
+        ? `Yo, my prefix is [ 𓆩 '${prefix}' 𓆪 ]\n\nThis is My prefix:\n➥ '${prefix}help [command]' -> information and usage of command\n\nHave fun using it, enjoy! ❤` 
         : "Sorry, I don't have a prefix.";
     if (body?.toLowerCase().startsWith('prefix')) {
         api.sendMessage(message, threadID, messageID);
